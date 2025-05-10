@@ -1,4 +1,4 @@
-import { Radio } from "@/components/radio"
+import RadioComponent from "@/components/radio"
 
 export default function RadioPage() {
   return (
@@ -9,7 +9,7 @@ export default function RadioPage() {
             <h1 className="text-4xl font-bold text-white mb-2">FM Radio</h1>
             <p className="text-gray-400">Listen to live FM radio stations from around the world</p>
           </div>
-          <Radio />
+          <RadioComponent />
         </div>
       </div>
     </div>

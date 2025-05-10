@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Home, Search, Library, PlusCircle, Heart, MusicIcon, Headphones, Radio, Mic2 } from "lucide-react"
+import { Home, Search, Library, PlusCircle, Heart, MusicIcon, Headphones, Radio, Mic2, Settings } from "lucide-react"
 
 export function Sidebar() {
   const pathname = usePathname()
@@ -59,10 +59,17 @@ export function Sidebar() {
               Create Playlist
             </Button>
           </Link>
-          <Button variant="ghost" className="w-full justify-start text-white hover:bg-gray-800">
-            <Heart className="mr-2 h-5 w-5" />
-            Liked Songs
-          </Button>
+          <Link href="/liked-songs">
+            <Button 
+              variant="ghost" 
+              className={`w-full justify-start text-white hover:bg-gray-800 ${
+                pathname === '/liked-songs' ? 'bg-gray-800' : ''
+              }`}
+            >
+              <Heart className="mr-2 h-5 w-5" />
+              Liked Songs
+            </Button>
+          </Link>
         </div>
 
         <div className="space-y-1">
@@ -98,6 +105,21 @@ export function Sidebar() {
             >
               <Mic2 className="mr-2 h-5 w-5" />
               Live Events
+            </Button>
+          </Link>
+        </div>
+
+        <div className="space-y-1">
+          <h3 className="text-gray-400 text-sm font-medium px-4 py-2">SETTINGS</h3>
+          <Link href="/settings">
+            <Button 
+              variant="ghost" 
+              className={`w-full justify-start text-white hover:bg-gray-800 ${
+                pathname === '/settings' ? 'bg-gray-800' : ''
+              }`}
+            >
+              <Settings className="mr-2 h-5 w-5" />
+              Settings
             </Button>
           </Link>
         </div>

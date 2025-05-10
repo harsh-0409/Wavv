@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bell, ChevronLeft, ChevronRight, Search, Settings } from "lucide-react"
+import { Bell, ChevronLeft, ChevronRight, Search, Settings, LogOut } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,6 +19,20 @@ import { ProfileDialog } from "./profile-dialog"
 
 export function TopBar() {
   const [searchVisible, setSearchVisible] = useState(false)
+  const router = useRouter()
+
+  const handleLogout = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('userSettings')
+    localStorage.removeItem('userPlaylists')
+    localStorage.removeItem('userData')
+    
+    // Clear any session data
+    sessionStorage.clear()
+    
+    // Redirect to login page
+    router.push('/login')
+  }
 
   return (
     <div className="h-16 bg-gray-900 border-b border-gray-800 flex items-center px-6 sticky top-0 z-10">
@@ -46,13 +61,15 @@ export function TopBar() {
         </Button>
       )}
 
-      <div className="ml-auto flex items-center space-x-4">
+      <div className="ml-auto flex items-center space-x-2">
         <Button variant="ghost" size="icon" className="text-white">
           <Bell className="h-5 w-5" />
         </Button>
-        <Button variant="ghost" size="icon" className="text-white">
-          <Settings className="h-5 w-5" />
-        </Button>
+        <Link href="/settings">
+          <Button variant="ghost" size="icon" className="text-white">
+            <Settings className="h-5 w-5" />
+          </Button>
+        </Link>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -73,14 +90,21 @@ export function TopBar() {
             >
               <Link href="/admin/login">Admin</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
-              Settings
+            <DropdownMenuItem
+              className="text-white hover:bg-gray-800 cursor-pointer"
+              asChild
+            >
+              <Link href="/settings">Settings</Link>
             </DropdownMenuItem>
             <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
               Help
             </DropdownMenuItem>
             <DropdownMenuSeparator className="bg-gray-800" />
-            <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
+            <DropdownMenuItem 
+              className="text-white hover:bg-gray-800 cursor-pointer"
+              onClick={handleLogout}
+            >
+              <LogOut className="mr-2 h-4 w-4" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>

@@ -13,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { ProfileDialog } from "./profile-dialog"
 
 export function TopBar() {
   const [searchVisible, setSearchVisible] = useState(false)
@@ -55,14 +56,14 @@ export function TopBar() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Avatar className="h-8 w-8 cursor-pointer">
-              <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+              <AvatarImage src="/download (1).jpeg" alt="User" />
               <AvatarFallback className="bg-pink-500">JD</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-gray-800 border-gray-700 text-white">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-gray-700" />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <ProfileDialog />
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuItem>Subscription</DropdownMenuItem>
             <DropdownMenuSeparator className="bg-gray-700" />

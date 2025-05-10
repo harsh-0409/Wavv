@@ -23,21 +23,42 @@ export function Sidebar() {
             <Home className="mr-2 h-5 w-5" />
             Home
           </Button>
-          <Button variant="ghost" className="w-full justify-start text-white hover:bg-gray-800">
-            <Search className="mr-2 h-5 w-5" />
-            Search
-          </Button>
-          <Button variant="ghost" className="w-full justify-start text-white hover:bg-gray-800">
-            <Library className="mr-2 h-5 w-5" />
-            Your Library
-          </Button>
+          <Link href="/search">
+            <Button 
+              variant="ghost" 
+              className={`w-full justify-start text-white hover:bg-gray-800 ${
+                pathname === '/search' ? 'bg-gray-800' : ''
+              }`}
+            >
+              <Search className="mr-2 h-5 w-5" />
+              Search
+            </Button>
+          </Link>
+          <Link href="/library">
+            <Button 
+              variant="ghost" 
+              className={`w-full justify-start text-white hover:bg-gray-800 ${
+                pathname === '/library' ? 'bg-gray-800' : ''
+              }`}
+            >
+              <Library className="mr-2 h-5 w-5" />
+              Your Library
+            </Button>
+          </Link>
         </div>
 
         <div className="space-y-1">
-          <Button variant="ghost" className="w-full justify-start text-white hover:bg-gray-800">
-            <PlusCircle className="mr-2 h-5 w-5" />
-            Create Playlist
-          </Button>
+          <Link href="/create-playlist">
+            <Button 
+              variant="ghost" 
+              className={`w-full justify-start text-white hover:bg-gray-800 ${
+                pathname === '/create-playlist' ? 'bg-gray-800' : ''
+              }`}
+            >
+              <PlusCircle className="mr-2 h-5 w-5" />
+              Create Playlist
+            </Button>
+          </Link>
           <Button variant="ghost" className="w-full justify-start text-white hover:bg-gray-800">
             <Heart className="mr-2 h-5 w-5" />
             Liked Songs

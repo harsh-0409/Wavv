@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "sonner"
+import { MusicPlayerProvider } from "@/contexts/music-player-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,10 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script src="https://www.youtube.com/iframe_api"></script>
+      </head>
       <body className="min-h-screen bg-black text-white" suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <MusicPlayerProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
+        </MusicPlayerProvider>
         <Toaster richColors />
       </body>
     </html>

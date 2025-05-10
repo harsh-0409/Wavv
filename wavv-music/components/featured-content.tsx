@@ -5,8 +5,8 @@ import Image from "next/image"
 
 export function FeaturedContent() {
   const recentlyPlayed = [
-    { id: 1, title: "After Hours", artist: "The Weeknd", cover: "/download (1).jpeg" },
-    { id: 2, title: "Future Nostalgia", artist: "Dua Lipa", cover: "/download (2).jpeg" },
+    { id: 1, title: "After Hours", artist: "The Weeknd", cover: "/afterhours.jpg" },
+    { id: 2, title: "Future Nostalgia", artist: "Dua Lipa", cover: "/futuren.jpg" },
     { id: 3, title: "Chromatica", artist: "Lady Gaga", cover: "/download (3).jpeg" },
     { id: 4, title: "Fine Line", artist: "Harry Styles", cover: "/download (4).jpeg" },
     { id: 5, title: "Folklore", artist: "Taylor Swift", cover: "/download (5).jpeg" },
@@ -17,13 +17,13 @@ export function FeaturedContent() {
       id: 1,
       title: "Today's Hits",
       description: "The hottest tracks right now",
-      cover: "/download (1).jpeg",
+      cover: "/todayh.jpg",
     },
     {
       id: 2,
       title: "Chill Vibes",
       description: "Relaxing beats for your day",
-      cover: "/download (2).jpeg",
+      cover: "/chillv.jpg",
     },
     {
       id: 3,
@@ -102,7 +102,7 @@ export function FeaturedContent() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={`/download (${(i % 5) + 1}).jpeg`}
+                    src={`/newr.jpg`}
                     alt={`New Release ${i + 1}`}
                     width={140}
                     height={140}

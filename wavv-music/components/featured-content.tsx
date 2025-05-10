@@ -5,11 +5,11 @@ import Image from "next/image"
 
 export function FeaturedContent() {
   const recentlyPlayed = [
-    { id: 1, title: "After Hours", artist: "The Weeknd", cover: "/placeholder.svg?height=160&width=160" },
-    { id: 2, title: "Future Nostalgia", artist: "Dua Lipa", cover: "/placeholder.svg?height=160&width=160" },
-    { id: 3, title: "Chromatica", artist: "Lady Gaga", cover: "/placeholder.svg?height=160&width=160" },
-    { id: 4, title: "Fine Line", artist: "Harry Styles", cover: "/placeholder.svg?height=160&width=160" },
-    { id: 5, title: "Folklore", artist: "Taylor Swift", cover: "/placeholder.svg?height=160&width=160" },
+    { id: 1, title: "After Hours", artist: "The Weeknd", cover: "/download (1).jpeg" },
+    { id: 2, title: "Future Nostalgia", artist: "Dua Lipa", cover: "/download (2).jpeg" },
+    { id: 3, title: "Chromatica", artist: "Lady Gaga", cover: "/download (3).jpeg" },
+    { id: 4, title: "Fine Line", artist: "Harry Styles", cover: "/download (4).jpeg" },
+    { id: 5, title: "Folklore", artist: "Taylor Swift", cover: "/download (5).jpeg" },
   ]
 
   const forYou = [
@@ -17,19 +17,19 @@ export function FeaturedContent() {
       id: 1,
       title: "Today's Hits",
       description: "The hottest tracks right now",
-      cover: "/placeholder.svg?height=200&width=200",
+      cover: "/download (1).jpeg",
     },
     {
       id: 2,
       title: "Chill Vibes",
       description: "Relaxing beats for your day",
-      cover: "/placeholder.svg?height=200&width=200",
+      cover: "/download (2).jpeg",
     },
     {
       id: 3,
       title: "Workout Energy",
       description: "Power your workout",
-      cover: "/placeholder.svg?height=200&width=200",
+      cover: "/download (3).jpeg",
     },
   ]
 
@@ -43,7 +43,7 @@ export function FeaturedContent() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={item.cover || "/placeholder.svg"}
+                    src={item.cover}
                     alt={item.title}
                     width={160}
                     height={160}
@@ -73,7 +73,7 @@ export function FeaturedContent() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={item.cover || "/placeholder.svg"}
+                    src={item.cover}
                     alt={item.title}
                     width={200}
                     height={200}
@@ -102,7 +102,7 @@ export function FeaturedContent() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={`/placeholder.svg?height=140&width=140`}
+                    src={`/download (${(i % 5) + 1}).jpeg`}
                     alt={`New Release ${i + 1}`}
                     width={140}
                     height={140}

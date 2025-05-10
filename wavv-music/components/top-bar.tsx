@@ -55,19 +55,33 @@ export function TopBar() {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Avatar className="h-8 w-8 cursor-pointer">
-              <AvatarImage src="/download (1).jpeg" alt="User" />
-              <AvatarFallback className="bg-pink-500">JD</AvatarFallback>
-            </Avatar>
+            <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+              <Avatar className="h-10 w-10">
+                <AvatarImage src="/The Weeknd Opens Up About His Past, Turning 30 and Getting Vulnerable on 'After Hours'.jpeg" alt="User" />
+                <AvatarFallback>U</AvatarFallback>
+              </Avatar>
+            </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-gray-800 border-gray-700 text-white">
+          <DropdownMenuContent className="w-56 bg-gray-900 border-gray-800 text-white">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator className="bg-gray-700" />
+            <DropdownMenuSeparator className="bg-gray-800" />
             <ProfileDialog />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-gray-700" />
-            <DropdownMenuItem>Log out</DropdownMenuItem>
+            <DropdownMenuItem
+              className="text-white hover:bg-gray-800 cursor-pointer"
+              asChild
+            >
+              <a href="/admin">Admin</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
+              Settings
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
+              Help
+            </DropdownMenuItem>
+            <DropdownMenuSeparator className="bg-gray-800" />
+            <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
+              Log out
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

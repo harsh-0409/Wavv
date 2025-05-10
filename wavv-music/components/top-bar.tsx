@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -70,7 +71,7 @@ export function TopBar() {
               className="text-white hover:bg-gray-800 cursor-pointer"
               asChild
             >
-              <a href="/admin">Admin</a>
+              <Link href="/admin/login">Admin</Link>
             </DropdownMenuItem>
             <DropdownMenuItem className="text-white hover:bg-gray-800 cursor-pointer">
               Settings
